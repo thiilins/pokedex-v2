@@ -1,3 +1,4 @@
+import { lighten } from 'polished'
 export default {
   colors: {
     backgroundPrimary: '#F5DB13',
@@ -50,8 +51,10 @@ export default {
       source: "'Source Sans Pro', sans-serif"
     },
     weight: {
+      light: 300,
       regular: 400,
       medium: 500,
+      semibold: 600,
       bold: 700
     },
     size: {

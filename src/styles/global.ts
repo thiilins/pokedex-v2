@@ -1,3 +1,4 @@
+import { Scrollbar } from '@/components/Scrollbar'
 import { createGlobalStyle, css } from 'styled-components'
 
 export default createGlobalStyle`
@@ -35,11 +36,15 @@ ${({ theme }) => css`
   }
   a {
     text-decoration: none;
+    color: unset;
   }
   html {
     font-family: ${theme.fonts.family.source};
   }
   body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    ${Scrollbar}
   }
 `}
    `

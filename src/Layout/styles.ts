@@ -1,13 +1,16 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Grid = styled.div`
-  display: grid;
-  position: relative;
-  grid-template-columns: 1fr;
-  grid-template-rows: 80px auto;
-  grid-template-areas:
-    'HD'
-    'CT';
-  min-width: 100vw;
-  min-height: 99vh;
+  ${({ theme }) => css`
+    display: grid;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      180deg,
+      ${theme.colors.backgroundPrimary} 0%,
+      ${theme.colors.backgroundSecondary} 50%
+    );
+    min-width: 100vw;
+    min-height: 100vh;
+  `}
 `
