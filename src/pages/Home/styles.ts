@@ -2,63 +2,97 @@ import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
   ${({ theme }) => css`
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    min-width: 99vw;
+    display: grid;
+    padding: 2rem;
+    height: 100%;
+    grid-template-areas:
+      'imageBanner'
+      'textBanner';
     align-items: center;
     justify-content: center;
-    background-color: ${theme.colors.primary};
-    color: ${theme.colors.primaryNegative};
-    .logo {
-      height: 6rem;
-      padding: 1.5em;
-      will-change: filter;
-    }
-    .logo:hover {
-      filter: drop-shadow(0 0 2em #646cffaa);
-    }
-    .logo.react:hover {
-      filter: drop-shadow(0 0 2em #61dafbaa);
-    }
-
-    @keyframes logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-      }
-    }
-
-    .card {
-      padding: 2rem;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      gap: 1rem;
-      justify-content: center;
-      button {
-        padding: 10px 20px;
-        border: 0;
-        background-color: ${theme.colors.secondaryNegative};
-        border-radius: 20px;
-        cursor: pointer;
-        color: ${theme.colors.primaryTextNegative};
-        &:hover {
-          background-color: ${theme.colors.primaryNegative};
-        }
-      }
-    }
-
-    .read-the-docs {
-      color: #888;
+    background: linear-gradient(
+      180deg,
+      ${theme.colors.backgroundPrimary} 0%,
+      ${theme.colors.backgroundSecondary} 50%
+    );
+    @media (min-width: 800px) {
+      grid-template-areas: 'textBanner imageBanner';
+      grid-template-columns: 1fr 1fr;
     }
   `}
+`
+export const BannerImage = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    grid-area: imageBanner;
+    min-width: auto;
+    min-height: auto;
+    width: 100%;
+    height: 100%;
+    @media (min-width: 800px) {
+      min-width: auto;
+      min-height: auto;
+    }
+  `}
+`
+export const BannerText = styled.div`
+  ${({ theme }) =>
+    css`
+      font-family: ${theme.fonts.family.karla};
+      display: flex;
+      flex-direction: column;
+      grid-area: textBanner;
+      min-width: auto;
+      min-height: auto;
+      width: 100%;
+      height: auto;
+      gap: 2rem;
+      text-align: center;
+      justify-content: center;
+      button {
+        width: 70%;
+      }
+      h2 {
+        font-size: 3rem;
+        line-height: 1.1;
+        font-weight: ${theme.fonts.weight.regular};
+        strong {
+          font-weight: ${theme.fonts.weight.bold};
+        }
+      }
+      span {
+        font-style: normal;
+        font-size: 1.5rem;
+        line-height: 1.3;
+        font-weight: ${theme.fonts.weight.regular};
+      }
+      @media (min-width: 920px) {
+        min-width: auto;
+        min-height: auto;
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+        padding: 2rem;
+        text-align: left;
+        button {
+          width: 30%;
+        }
+        h2 {
+          font-size: 4rem;
+          line-height: 1.1;
+          font-weight: ${theme.fonts.weight.regular};
+          strong {
+            font-weight: ${theme.fonts.weight.bold};
+          }
+        }
+        span {
+          font-style: normal;
+          font-size: 2rem;
+          line-height: 1.3;
+          font-weight: ${theme.fonts.weight.regular};
+        }
+      }
+    `}
 `

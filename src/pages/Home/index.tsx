@@ -1,35 +1,25 @@
-import reactLogo from '@assets/react.svg'
-import React, { useState } from 'react'
-import ToggleTheme from '@/components/ToggleTheme'
-import { Container } from './styles'
-const Home = () => {
-  const [count, setCount] = useState(0)
+import { BannerImage, Container, BannerText } from './styles'
+
+import ImageBanner from '@/assets/home_banner.svg'
+import Button from '@/components/Button'
+const HomePaga: React.FC = () => {
   return (
     <Container>
-      <ToggleTheme />
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: 'Edite <code>src/App.tsx</code> e salve para testar'
-          }}></p>
-      </div>
-      <p className="read-the-docs">
-        Clique nos logotipos Vite e React para saber mais
-      </p>
+      <BannerText>
+        <h2>
+          <strong>Encontre</strong> todos os seus <strong>Pokémon</strong>{' '}
+          favorito
+        </h2>
+        <span>
+          Você pode conhecer o tipo de Pokémon, seus pontos fortes, desvantagens
+          e habilidades
+        </span>
+        <Button color="green" />
+      </BannerText>
+      <BannerImage>
+        <ImageBanner />
+      </BannerImage>
     </Container>
   )
 }
-
-export default Home
+export default HomePaga

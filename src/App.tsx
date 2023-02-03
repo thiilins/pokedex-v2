@@ -1,12 +1,12 @@
 import React from 'react'
-import { ThemeProvider } from '@contexts/ThemeContext'
+import { ThemeProvider } from 'styled-components'
 import Routes from '@/routes'
 import GlobalStyles from '@styles/global'
 import ToastContainer from '@components/ToastContainer'
-
-function App() {
+import theme from '@/styles/theme'
+const App = () => {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <React.StrictMode>
         <GlobalStyles />
         <ToastContainer />

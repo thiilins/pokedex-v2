@@ -1,6 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components'
 
-export default createGlobalStyle`  
+export default createGlobalStyle`
 ${({ theme }) => css`
   * {
     margin: 0;
@@ -19,33 +19,27 @@ ${({ theme }) => css`
       user-select: none;
     }
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${theme.fonts.family.karla};
+    font-weight: ${theme.fonts.weight.bold};
+  }
+
   strong {
     font-weight: ${theme.fonts.weight.bold};
   }
   a {
-    color: ${theme.colors.primary};
     text-decoration: none;
-
-    &:hover {
-      color: ${theme.colors.secondary};
-    }
   }
   html {
-    font-family: ${theme.fonts.family};
+    font-family: ${theme.fonts.family.source};
   }
   body {
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: ${theme.colors.primary}30;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-color: ${theme.colors.primary};
-      border-radius: 20px; /* roundness of the scroll thumb */
-    }
   }
 `}
    `
