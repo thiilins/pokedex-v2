@@ -14,7 +14,7 @@ const HomePaga: React.FC = () => {
           Você pode conhecer o tipo de Pokémon, seus pontos fortes, desvantagens
           e habilidades
         </span>
-        <LinkButton to="/pokemon" title="Ver Pokemons" color="green" />
+        <LinkButton to="/pokemons" title="Ver Pokemons" color="green" />
       </BannerText>
       <BannerImage>
         <div className="img">

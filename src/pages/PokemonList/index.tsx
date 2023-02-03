@@ -1,8 +1,13 @@
-import React, { useState } from 'react'
+import UnderConstruction from '@/components/UnderConstruction'
+import React from 'react'
 
 import { Container } from './styles'
-const PokemonListPage = () => {
-  return <Container></Container>
+const Error404Page = () => {
+  return (
+    <Container>
+      <UnderConstruction />
+    </Container>
+  )
 }
 
-export default PokemonListPage
+export default Error404Page
